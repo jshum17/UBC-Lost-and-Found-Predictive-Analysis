@@ -1,6 +1,6 @@
 # UBC Lost and Found System Analysis and Forecasting
 
-<img src="./img/access.jpg" alt="drawing" style="width:100%;"/>
+<img src="./img/access.jpg" alt="Access UBC" style="width:100%;"/>
 Access Services. Retrieved from <a href = "https://parking.ubc.ca/">UBC Parking</a> 
 
 ## Overview
@@ -20,7 +20,13 @@ The [UBC Lost and Found database](https://lostandfound.ubc.ca/all-items) is a pu
 
 ### 2. Predictive Modeling
 - **ARIMA Model**: Focused on linear trends and long-term forecasting, useful for aggregate resource planning.
+<img src="./img/arimaweekly.png" alt="Arima Weekly Forecast" style="width:100%;"/>
+*ARIMA Weekly Forecast: Predicts weekly item loss trends based on historical data*
+
 - **LSTM Model**: Captured nonlinear patterns and short-term dependencies, useful for dynamic daily forecasts.
+<img src="./img/lstmdaily.png" alt="LSTM Daily Forecast" style="width:100%;"/>
+*LSTM Daily Forecast: Captures non-linear, short-term fluctuations in item loss patterns*
+
 - **Model Comparison**: Highlighted trade-offs between simplicity (ARIMA) and flexibility (LSTM) for different forecasting needs.
 
 ### 3. Actionable Recommendations
@@ -29,5 +35,15 @@ The [UBC Lost and Found database](https://lostandfound.ubc.ca/all-items) is a pu
 - **Enhanced Communication Platforms**: Proposed centralized reporting systems for better lost and found operations.
 
 ## Technical Details
+- **Language**: Python 3.8+
 - **Libraries**: pandas, matplotlib, numpy, seaborn, scikit-learn, statsmodels, NLTK, mglearn, spaCy, PyTorch
-- **Model Building**: Time series forecasting with ARIMA and minimal-layer LSTM models
+- **Models**: Time series forecasting using ARIMA and LSTM.
+
+## Installation
+To replicate this project:
+
+1. Clone the repository:
+   > git clone https://github.com/yourusername/UBC-Lost-and-Found-Predictive-Analysis.git  
+2. Install dependencies:
+   >pip install -r requirements.txt
+3. Run the `notebook.ipynb` Jupyter notebook

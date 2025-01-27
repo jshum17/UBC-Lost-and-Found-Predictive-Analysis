@@ -1,0 +1,18 @@
+# Data manipulation and analysis
+pandas
+numpy
+
+# Visualization
+matplotlib
+seaborn
+mglearn
+
+# Machine Learning
+scikit-learn
+torch # PyTorch
+spacy
+statsmodels
+
+# Natural Language Processing
+nltk
+stopwords # From nltk
