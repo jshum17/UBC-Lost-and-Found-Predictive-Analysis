@@ -22,12 +22,12 @@ The [UBC Lost and Found database](https://lostandfound.ubc.ca/all-items) is a pu
 - **ARIMA Model**: Focused on linear trends and long-term forecasting, useful for aggregate resource planning.
 <img src="./img/arimaweekly.png" alt="Arima Weekly Forecast" style="width:100%;"/>
 
-_ARIMA Weekly Forecast: Predicts weekly item loss trends based on historical data_
+   _ARIMA Weekly Forecast: Predicts weekly item loss trends based on historical data_
 
 - **LSTM Model**: Captured nonlinear patterns and short-term dependencies, useful for dynamic daily forecasts.
 <img src="./img/lstmdaily.png" alt="LSTM Daily Forecast" style="width:100%;"/>
 
-_LSTM Daily Forecast: Captures non-linear, short-term fluctuations in item loss patterns_
+   _LSTM Daily Forecast: Captures non-linear, short-term fluctuations in item loss patterns_
 
 - **Model Comparison**: Highlighted trade-offs between simplicity (ARIMA) and flexibility (LSTM) for different forecasting needs.
 
