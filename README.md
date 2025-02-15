@@ -1,6 +1,6 @@
 # UBC Lost and Found System Analysis and Forecasting
 
-<img src="./img/access.jpg" alt="Access UBC" style="width:100%;"/>
+<img src="./notebook/img/access.jpg" alt="Access UBC" style="width:100%;"/>
 Access Services. Retrieved from <a href = "https://parking.ubc.ca/">UBC Parking</a> 
 
 ## Overview
@@ -20,13 +20,13 @@ The [UBC Lost and Found database](https://lostandfound.ubc.ca/all-items) is a pu
 
 ### 2. Predictive Modeling
 - **ARIMA Model**: Focused on linear trends and long-term forecasting, useful for aggregate resource planning.
-<img src="./img/arimaweekly.png" alt="Arima Weekly Forecast" style="width:100%;"/>
+<img src="./notebook/img/arimaweekly.png" alt="Arima Weekly Forecast" style="width:100%;"/>
 
   _ARIMA Weekly Forecast: Predicts weekly item loss trends based on historical data_
 
 
 - **LSTM Model**: Captured nonlinear patterns and short-term dependencies, useful for dynamic daily forecasts.
-<img src="./img/lstmdaily.png" alt="LSTM Daily Forecast" style="width:100%;"/>
+<img src="./notebook/img/lstmdaily.png" alt="LSTM Daily Forecast" style="width:100%;"/>
 
   _LSTM Daily Forecast: Captures non-linear, short-term fluctuations in item loss patterns_
  
