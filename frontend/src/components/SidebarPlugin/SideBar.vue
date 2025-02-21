@@ -8,7 +8,7 @@
     <div class="sidebar-wrapper" id="style-3">
       <div class="logo">
         <a
-          href="http://www.creative-tim.com"
+          href="#/dashboard"
           aria-label="sidebar mini logo"
           class="simple-text logo-mini"
         >
@@ -19,7 +19,7 @@
             />
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#/dashboard" class="simple-text logo-normal">
           {{ title }}
         </a>
       </div>
@@ -47,11 +47,11 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Creative Tim",
+      default: "UBC Lost & Found",
     },
     backgroundColor: {
       type: String,
-      default: "vue",
+      default: "primary",
     },
     activeColor: {
       type: String,
