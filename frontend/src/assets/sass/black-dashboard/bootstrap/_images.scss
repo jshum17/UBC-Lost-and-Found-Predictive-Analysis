@@ -31,8 +31,9 @@
 }
 
 .figure-img {
-  margin-bottom: ($spacer / 2);
   line-height: 1;
+  // width: 30em;
+  margin: 0 auto ($spacer / 2) auto;
 }
 
 .figure-caption {

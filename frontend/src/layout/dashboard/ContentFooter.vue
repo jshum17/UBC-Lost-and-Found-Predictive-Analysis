@@ -22,7 +22,7 @@
     <div v-if="isModalVisible" class="modal-overlay" @click="hideCredits">
       <div class="modal-content" @click.stop>
         <h5>Credits</h5>
-        <p>Designed with elements from
+        <p>Using design assets from
           <a href="https://www.binarcode.com" target="_blank" rel="noopener">Binar Code</a>
           &
           <a href="https://www.creative-tim.com" target="_blank" rel="noopener">Creative Tim</a>

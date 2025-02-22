@@ -7,7 +7,7 @@
             <div class="row">
               <div class="col-sm-6" :class="isRTL ? 'text-right' : 'text-left'">
                 <h5 class="card-category">Lost Item Trend</h5>
-                <h2 class="card-title">Weekly Count</h2>
+                <h2 class="card-title">Monthly Count</h2>
               </div>
               <div class="col-sm-6">
                 <div

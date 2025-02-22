@@ -8,10 +8,15 @@
           icon="tim-icons icon-chart-pie-36"
         />
         <sidebar-link
+          to="/info"
+          :name="$t('Info')"
+          icon="tim-icons icon-atom"
+        />
+        <!-- <sidebar-link
           to="/icons"
           :name="$t('sidebar.icons')"
           icon="tim-icons icon-atom"
-        />
+        /> -->
         <!-- <sidebar-link
           to="/maps"
           :name="$t('sidebar.maps')"
