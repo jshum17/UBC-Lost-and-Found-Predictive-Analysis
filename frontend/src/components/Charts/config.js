@@ -145,7 +145,7 @@ export let orangeChartOptions = {
     ],
   },
 };
-export let greenChartOptions = {
+export let forecastLineChartOptions = {
   ...basicOptions,
   tooltips: {
     backgroundColor: "#f5f5f5",
@@ -167,8 +167,8 @@ export let greenChartOptions = {
           zeroLineColor: "transparent",
         },
         ticks: {
-          suggestedMin: 50,
-          suggestedMax: 125,
+          suggestedMin: 0,
+          suggestedMax: 5,
           padding: 20,
           fontColor: "#9e9e9e",
         },

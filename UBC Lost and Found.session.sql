@@ -1,0 +1,1 @@
+SELECT * FROM lost_items ORDER BY date_lost;

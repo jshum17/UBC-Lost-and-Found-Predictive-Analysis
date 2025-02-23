@@ -51,6 +51,29 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-lg-6" :class="{ 'text-right': isRTL }">
+        <card type="chart">
+          <template slot="header">
+            <h5 class="card-category">Lost Item Prediction</h5>
+            <h3 class="card-title">
+              <i class="tim-icons icon-send text-success"></i> Daily Forecast
+            </h3>
+          </template>
+          <div class="chart-area">
+            <line-chart
+              style="height: 100%"
+              ref="forecastLineChart"
+              chart-id="forecast-Line-Chart"
+              :chart-data="forecastLineChart.chartData"
+              :gradient-stops="forecastLineChart.gradientStops"
+              :extra-options="forecastLineChart.extraOptions"
+            >
+            </line-chart>
+          </div>
+        </card>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-12">
         <card class="card" :header-classes="{ 'text-right': isRTL }">
           <h4 slot="header" class="card-title">All Lost Items</h4>
@@ -95,6 +118,36 @@ export default {
         gradientStops: [1, 0.4, 0],
         categories: [],
       },
+      forecastLineChart: {
+        extraOptions: chartConfigs.forecastLineChartOptions,
+        chartData: {
+          labels: [],
+          datasets: [
+            {
+              label: "Predicted Count",
+              fill: true,
+              borderColor: config.colors.red,
+              borderWidth: 2,
+              borderDash: [5, 5],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.red,
+              pointBorderColor: "rgba(255,255,255,0)",
+              pointHoverBackgroundColor: config.colors.red,
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+              data: [],
+            },
+          ],
+        },
+        gradientColors: [
+          "rgba(66,134,121,0.15)",
+          "rgba(66,134,121,0.0)",
+          "rgba(66,134,121,0)",
+        ],
+        gradientStops: [1, 0.4, 0],
+      },
       tableData: [],
       tableColumns: [
         { key: "id", label: "ID" },
@@ -104,7 +157,7 @@ export default {
         { key: "location", label: "Location" },
         { key: "status", label: "Status" },
       ],
-    };
+    }
   },
   computed: {
     enableRTL() {
@@ -121,6 +174,7 @@ export default {
     // Fetch data from Flask backend
     await this.fetchMonthlyTrend();
     await this.fetchAllItems();
+    await this.fetchDailyForecast();
   },
   methods: {
     async fetchMonthlyTrend() {
@@ -136,6 +190,39 @@ export default {
         this.initTimeChart(1);
       } catch (error) {
         console.error("Error fetching monthly trend data:", error);
+      }
+    },
+    async fetchDailyForecast() {
+      try {
+        const lstmResponse = await api.getDailyForecast();
+        let lstmPredictions = lstmResponse.data.counts;
+        let futureDates = lstmResponse.data.dates;
+
+        // Update the chart data with predictions and future dates
+        this.forecastLineChart.chartData = {
+          labels: futureDates,  // Use future dates as labels
+          datasets: [
+            {
+              label: "Predicted Count",
+              fill: true,
+              borderColor: config.colors.red,
+              borderWidth: 2,
+              borderDash: [5, 5],
+              borderDashOffset: 0.0,
+              pointBackgroundColor: config.colors.red,
+              pointBorderColor: "rgba(255,255,255,0)",
+              pointHoverBackgroundColor: config.colors.red,
+              pointBorderWidth: 20,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 15,
+              pointRadius: 4,
+              data: lstmPredictions, 
+            },
+          ],
+        };
+        this.$refs.forecastLineChart.update();
+      } catch (error) {
+        console.error("Error fetching prediction data:", error);
       }
     },
     async fetchAllItems() {
@@ -171,7 +258,7 @@ export default {
             pointHoverBorderWidth: 15,
             pointRadius: 4,
             data: this.timelineChart.allData[index],
-          },
+          }
         ],
         labels: [
           "JAN",

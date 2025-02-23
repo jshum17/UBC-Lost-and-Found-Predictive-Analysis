@@ -24,4 +24,7 @@ export default {
     getItems() {
         return apiClient.get('/lost_items');
     },
+    getDailyForecast() {
+        return apiClient.get('/forecast/daily');
+    }
 };
