@@ -32,7 +32,7 @@ def get_lost_items():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@api.route('/counts/<int:year>', methods=['GET'])
+@api.route('/count<int:year>', methods=['GET'])
 def get_counts_by_year(year):
     try:
         conn = get_db_connection()

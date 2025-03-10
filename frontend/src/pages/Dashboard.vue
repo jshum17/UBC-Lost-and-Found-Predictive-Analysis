@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-lg-6">
         <card type="chart">
           <template slot="header">
             <div class="row">
@@ -49,8 +49,6 @@
           </div>
         </card>
       </div>
-    </div>
-    <div class="row">
       <div class="col-lg-6" :class="{ 'text-right': isRTL }">
         <card type="chart">
           <template slot="header">
@@ -73,6 +71,9 @@
         </card>
       </div>
     </div>
+    <!-- <div class="row">
+      
+    </div> -->
     <div class="row">
       <div class="col-12">
         <card class="card" :header-classes="{ 'text-right': isRTL }">
@@ -220,7 +221,6 @@ export default {
             },
           ],
         };
-        this.$refs.forecastLineChart.update();
       } catch (error) {
         console.error("Error fetching prediction data:", error);
       }
