@@ -40,6 +40,8 @@ Developed a web dashboard using **Flask** (backend) and **Vue.js** (frontend) to
 - ✅ Generate forecasts using machine learning models (LSTM) to predict future lost item patterns.
 - ⬜️ Filter by item category, location, and time period for better decision-making.
 
+<img src="./img/demo.png" alt="Web Dashboard" style="width:100%;"/>
+
 ### 4. Actionable Recommendations
 - **Targeted Awareness Campaigns**: Suggested communication strategies to reduce losses during high-risk periods.
 - **Optimized Storage Solutions**: Recommended resource allocation based on predicted item trends.
